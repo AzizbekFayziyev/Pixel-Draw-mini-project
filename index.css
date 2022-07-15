@@ -1,0 +1,106 @@
+/* Global styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background: linear-gradient(to left, #01ffaf 50%, #a30cfa 50%);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+body::after {
+    pointer-events: none;
+    animation: author 2s ease-in-out;
+    content: "CREATED & DESIGNED BY AVANCODER";
+    background: #ffffff;
+    display: grid;
+    place-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    font-family: serif;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes author {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Title */
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    color: #ffffff;
+    font-family: fantasy;
+    letter-spacing: 6.5px;
+    text-shadow: 3px 3px 3px #333;
+    animation: rotate 1.1s ease-in-out infinite;
+    margin: 30px 0;
+}
+
+@keyframes rotate {
+
+    0%,
+    100% {
+        transform: rotate(8deg);
+    }
+
+    50% {
+        transform: rotate(-8deg);
+    }
+}
+
+/* pixels */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 800px;
+    background: #00000025;
+}
+
+.container .px {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+}
+
+.draw {
+    animation: pixel 3s ease infinite;
+    background: #590d7d;
+}
+
+@keyframes pixel {
+
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(360deg);
+    }
+}
